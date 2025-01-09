@@ -1,0 +1,82 @@
+// Repetition with Loops:
+// Doing Things Over and Over
+// Loop - Infinte loop until it is told to stop
+// While
+// For
+
+
+fn main(){
+    // loop keyword
+    loop {
+        println!("Hello, world!");
+        break; // if not written, it will infinitely run!
+    }
+
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10{
+            break counter * 2;
+        }
+    };
+
+    println!("The result is {result}"); // result = 20!
+
+
+    // Loop Labels to Disambiguate Between Multiple Loops
+    let mut count = 0;
+    'counting_up: loop { // labeled this loop name as 'counting_up
+        println!("count = {count}");
+        let mut remaining = 10;
+
+        loop {
+            println!("remaining = {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+        count += 1;
+    }
+    println!("count = {count}");
+
+
+    // While loop 
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{number}!");
+
+        number -= 1;
+    }
+
+    println!("LIFTOFF!!!");
+
+    // # Looping Through a Collection with for loop
+    let a:[i32; 6] = [1, 2, 3, 4, 5, 6];
+    let b:[&str; 6] = ["a", "b", "c", "d", "e", "f"];
+
+    for element in a {
+        println!("{element}");
+    }
+
+    for letter in b {
+        println!("{letter}");
+    }
+
+    for number in (1..4).rev(){
+        println!("{number}");
+    }
+    println!("Hurrah!{number}");
+
+    for num in 1..10{ // 1 till 9, 10 is exclusive
+        println!("{num}");
+    }
+    // println!("Hurrah!{num}"); // not in the scope error
+
+}
