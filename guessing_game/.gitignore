@@ -1,0 +1,15 @@
+# Rust build artifacts
+/target/
+**/*.rs.bk
+
+# Dependency directory
+/Cargo.lock
+
+# Generated files
+/pkg/
+*.log
+
+# Optional: Exclude IDE/Editor-specific files
+.idea/
+*.swp
+.vscode/
